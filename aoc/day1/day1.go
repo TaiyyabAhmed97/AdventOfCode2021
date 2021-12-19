@@ -12,8 +12,6 @@ func main() {
 	fmt.Println("day1!")
 	depths := readInput()
 
-	count := 0
-
 	var sums []int
 
 	sum := depths[0] + depths[1] + depths[2]
@@ -27,21 +25,12 @@ func main() {
 		}
 
 		currSum := depths[i] + depths[i+1] + depths[i+2]
-		fmt.Printf("Current sum for %d : %d, %d : %d, %d : %d, is %d\n ", depths[i], i, depths[i+1], i+1, depths[i+2], i+2, currSum)
-		fmt.Printf("previous sum is %d\n", sum)
-
-		if currSum > sum {
-			count++
-			sum = currSum
-			fmt.Printf("%d is the current count\n", count)
-		}
 
 		sums = append(sums, currSum)
 
 	}
 
 	fmt.Println(findIncreasisity(sums))
-	fmt.Println(count)
 
 }
 
